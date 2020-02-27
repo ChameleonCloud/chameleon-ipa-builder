@@ -1,7 +1,7 @@
 DOCKER_IMAGE ?= chameleon/ipa-builder
 
-.PHONY: build
-build: bindep.txt
+.PHONY: docker
+docker: bindep.txt
 	docker build -t $(DOCKER_IMAGE) .
 
 bindep.txt:

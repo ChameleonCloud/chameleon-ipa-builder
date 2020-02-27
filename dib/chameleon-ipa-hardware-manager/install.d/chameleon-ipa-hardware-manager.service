@@ -1,0 +1,14 @@
+[Unit]
+Description=Install Chameleon IPA Hardware Manager
+After=network-online.target
+Before=ironic-python-agent.service
+
+[Service]
+Type=oneshot
+ExecStart=/opt/chameleon-ipa-hardware-manager/manage.sh install
+RemainAfterExit=true
+ExecStop=/opt/chameleon-ipa-hardware-manager/manage.sh uninstall
+StandardOutput=journal
+
+[Install]
+WantedBy=multi-user.target ironic-python-agent.service
