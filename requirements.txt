@@ -1,2 +1,6 @@
 diskimage-builder
+dib-utils
 ironic-python-agent-builder
+# For some reason, pyyaml is required but isn't explicitly
+# declared as a dependency by the above modules.
+pyyaml

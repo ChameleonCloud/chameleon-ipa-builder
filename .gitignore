@@ -1,2 +1,4 @@
 # Tox environment
 .tox/
+# Dynamic dependency file
+bindep.txt
