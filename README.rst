@@ -1,7 +1,7 @@
 chameleon-ipa-deploy
 ====================
 
-Build tooling for a custom `ironic python agent <http://git.openstack.org/cgit/openstack/ironic-python-agent>`_ that includes a Chameleon-specific `hardware manager <http://github.com/ChameleonCloud/chameleon-ipa-hardware-manager>`_.
+Build tooling for a custom `ironic python agent <https://git.openstack.org/cgit/openstack/ironic-python-agent>`_ that includes a Chameleon-specific `hardware manager <https://github.com/ChameleonCloud/chameleon-ipa-hardware-manager>`_.
 
 Building the ramdisk/kernel images
 ----------------------------------
