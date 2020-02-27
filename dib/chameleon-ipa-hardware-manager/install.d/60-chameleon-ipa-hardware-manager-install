@@ -9,20 +9,15 @@ set -o pipefail
 export LC_ALL=C.UTF-8
 
 SCRIPTDIR=$(dirname $0)
-VENVDIR=/opt/ironic-python-agent
 
-# pip might be an older version which does not support the -c option, therefore
-# upgrade it first. This is no-op when a new enough version is available.
-$VENVDIR/bin/pip install 'pip>=7.1'
-
-# install IPA inside the virtual environment
-$VENVDIR/bin/pip install -c $UPPER_CONSTRAINTS $IPADIR --install-option="--install-scripts=/usr/local/bin/"
-
-install -D -g root -o root -m 755 ${SCRIPTDIR}/manage.sh /opt/chameleon-ipa-hardware-manager/manage.sh
+install -D -g root -o root -m 755 \
+  ${SCRIPTDIR}/manage.sh /opt/chameleon-ipa-hardware-manager/manage.sh
 
 case "$DIB_INIT_SYSTEM" in
     systemd)
-        install -D -g root -o root -m 0644 ${SCRIPTDIR}/chameleon-ipa-hardware-manager.service /usr/lib/systemd/system/chameleon-ipa-hardware-manager.service
+        install -D -g root -o root -m 0644 \
+          ${SCRIPTDIR}/chameleon-ipa-hardware-manager.service \
+          /usr/lib/systemd/system/chameleon-ipa-hardware-manager.service
         ;;
     *)
         echo "Unsupported init system"
