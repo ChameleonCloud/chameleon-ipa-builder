@@ -29,17 +29,17 @@ The initramfs and kernel images, if built successfully, will be placed in the re
 Docker build (experimental)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-It should be possible to run `diskimage-builder` inside of a Docker container, allowing you to build DIB images from your laptop running Mac OS X or likewise. This repo contains a Dockerfile that should set up most of the dependencies:
+It should be possible to run ``diskimage-builder`` inside of a Docker container, allowing you to build DIB images from your laptop running Mac OS X or likewise. This repo contains a Dockerfile that should set up most of the dependencies:
 
 .. code-block:: shell
 
    make docker
 
-Once the Docker image is created, you can launch a container to build the image. The container must run in `--privileged` mode in order for many parts of DIB to function; it is probably possible to break down this "allow everything" flag into individual capabilities and mounts, but it's unclear to the author which ones are needed.
+Once the Docker image is created, you can launch a container to build the image. The container must run in ``--privileged`` mode in order for many parts of DIB to function; it is probably possible to break down this "allow everything" flag into individual capabilities and mounts, but it's unclear to the author which ones are needed.
 
 .. code-block:: shell
 
    docker run --rm --privileged -v ./out:/out chameleon/ipa-builder
 
 
-If successful, the initramfs and kernel images should be outputted to the `./out` directory.
+If successful, the initramfs and kernel images should be outputted to the ``./out`` directory.
