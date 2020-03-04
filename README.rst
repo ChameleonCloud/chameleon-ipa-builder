@@ -8,14 +8,28 @@ Building the ramdisk/kernel images
 
 The simplest way to build these images is on a distribution `already supported by diskimage-builder <https://docs.openstack.org/diskimage-builder/latest/user_guide/supported_distros.html>`_ (currently, CentOS 7 is on that list, but not CentOS 8).
 
+To perform the installation, you will need a recent version of Python 3 and ``tox`` installed:
+
+.. code-block:: shell
+
+  # RHEL/CentOS:
+  yum install -y python3
+  # Ubuntu:
+  apt-get install -y python3
+
+  # Get the most recent pip version for sanity
+  pip3 install -U pip
+  # Install tox globally (can also do in virtualenv)
+  pip3 install tox
+
 There are some binary dependencies necessary. To get and install the latest list of binary dependencies, you can use the `bindep` tox env and pipe the result to a package manager.
 
 .. code-block:: shell
 
    # RHEL/CentOS:
-   tox -e bindep | xargs yum install
+   tox -qq -e bindep | xargs yum install
    # Ubuntu:
-   tox -e bindep | xargs apt-get install
+   tox -qq -e bindep | xargs apt-get install
 
 To build the image, run `tox` without any args (this effectively runs with `-e builder`).
 
