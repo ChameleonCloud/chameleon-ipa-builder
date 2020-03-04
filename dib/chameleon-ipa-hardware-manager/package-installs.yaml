@@ -1,0 +1,6 @@
+# DIB currently removes the linux-firmware package as part of the yum-minimal
+# element--while this may be appropriate for cloud/VM images, it removes drivers
+# we require for many pieces of hardware. So, we re-add the package.
+# Following advice from: https://review.opendev.org/#/c/675547/
+linux-firmware:
+  phase: post-install.d
