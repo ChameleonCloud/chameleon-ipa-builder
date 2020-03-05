@@ -1,0 +1,12 @@
+#!/bin/bash
+set -eu
+set -o pipefail
+
+# This needs to match the VENVDIR used in the IPA element:
+# https://opendev.org/openstack/ironic-python-agent-builder/src/branch/master/dib/ironic-python-agent-ramdisk/install.d/ironic-python-agent-ramdisk-source-install/60-ironic-python-agent-ramdisk-install
+VENVDIR=/opt/ironic-python-agent
+HWM_REPO=https://github.com/ChameleonCloud/chameleon-ipa-hardware-manager
+HWM_REF=master
+
+$VENVDIR/pip install --upgrade --force-reinstall \
+  "git+$HWM_REPO@$HWM_REF#egg=chameleon_hardware_manager"

@@ -8,7 +8,7 @@ set -o pipefail
 
 case "$DIB_INIT_SYSTEM" in
     systemd)
-        systemctl enable chameleon-ipa-hardware-manager.service
+        systemctl enable chameleon-ipa-hardware-manager-sync.service
         ;;
     *)
         echo "Unsupported init system"

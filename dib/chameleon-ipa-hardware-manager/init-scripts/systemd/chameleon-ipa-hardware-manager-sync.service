@@ -5,9 +5,8 @@ Before=ironic-python-agent.service
 
 [Service]
 Type=oneshot
-ExecStart=/opt/chameleon-ipa-hardware-manager/manage.sh install
+ExecStart=/usr/local/bin/chameleon-ipa-hardware-manager-sync
 RemainAfterExit=true
-ExecStop=/opt/chameleon-ipa-hardware-manager/manage.sh uninstall
 StandardOutput=journal
 
 [Install]
