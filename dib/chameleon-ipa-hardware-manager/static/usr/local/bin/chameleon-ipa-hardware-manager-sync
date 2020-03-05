@@ -8,5 +8,5 @@ VENVDIR=/opt/ironic-python-agent
 HWM_REPO=https://github.com/ChameleonCloud/chameleon-ipa-hardware-manager
 HWM_REF=master
 
-$VENVDIR/pip install --upgrade --force-reinstall \
+$VENVDIR/bin/pip install --upgrade --force-reinstall \
   "git+$HWM_REPO@$HWM_REF#egg=chameleon_hardware_manager"
