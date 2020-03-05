@@ -2,7 +2,8 @@
 set -eu
 set -o pipefail
 
-# This needs to match something...
+# This needs to match the VIRTUALENV used in the IPA element:
+# https://opendev.org/openstack/ironic-python-agent-builder/src/branch/master/dib/ironic-python-agent-ramdisk/install.d/ironic-python-agent-ramdisk-source-install/60-ironic-python-agent-ramdisk-install
 VIRTUALENV=/opt/ironic-python-agent
 HWM_REPO=https://github.com/ChameleonCloud/chameleon-ipa-hardware-manager
 HWM_REF=master
