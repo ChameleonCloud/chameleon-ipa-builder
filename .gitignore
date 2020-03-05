@@ -2,3 +2,6 @@
 .tox/
 # Dynamic dependency file
 bindep.txt
+# Output files
+*.initramfs
+*.kernel

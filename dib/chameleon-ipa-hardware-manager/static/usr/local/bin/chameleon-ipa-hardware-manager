@@ -9,7 +9,7 @@ HWM_REF=master
 
 source "$VIRTUALENV/bin/activate"
 
-case "$1" in
+case "${1:-install}" in
   install)
     pip install "git+$HWM_REPO@$HWM_REF#egg=chameleon_hardware_manager"
     ;;
